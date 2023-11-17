@@ -1,0 +1,40 @@
+﻿@model CourseViewModel
+@{
+    ViewData["Title"] = "Add An course Courses";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="mb-3">
+    <a asp-controller="Course" asp-action="List">Go to the list</a>
+</div>
+
+<form method="Post" asp-action ="Add">
+<div class="mb-3">
+    <label class="form-label" asp-for="Course.CourseName">Course Name</label>
+    <span class="form-text text-danger" asp-validation-for="Course.CourseName"></span>
+    <input class="form-control" type="text" asp-for="Course.CourseName" />
+</div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Course.CourseInstructor">Course Instructor</label>
+        <span class="form-text text-danger" asp-validation-for="Course.CourseInstructor"></span>
+        <input class="form-control" type="text" asp-for="Course.CourseInstructor" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Course.StartDate">Start Date</label>
+        <span class="form-text text-danger" asp-validation-for="Course.StartDate"></span>
+        <input class="form-control" type="Date" asp-for="Course.StartDate" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" asp-for="Course.RoomNumber">Room Number</label>
+        <span class="form-text text-danger" asp-validation-for="Course.RoomNumber"></span>
+        <input class="form-control" type="text" asp-for="Course.RoomNumber" />
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Add"/>
+    <a class="btn btn-primary" asp-controller="Course" asp-action="List">Cancel</a>
+
+</form>
